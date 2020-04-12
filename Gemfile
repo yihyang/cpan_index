@@ -29,8 +29,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap', '~> 4.3.1'
-gem 'pg'
 gem 'dotenv'
+gem 'httparty'
+gem 'pg'
 gem 'rspec-rails'
 gem 'slim-rails'
 
