@@ -6,5 +6,5 @@ class Package < ApplicationRecord
   FUZZY_SEARCHABLE_ATTRIBUTES = ['title']
 
   has_many :package_versions
-  has_one :latest_package_version, through: :latest_package_version_id
+  belongs_to :latest_package_version, class_name: 'PackageVersion', foreign_key: 'latest_package_version_id'
 end

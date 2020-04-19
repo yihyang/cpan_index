@@ -3,5 +3,5 @@ class Person < ApplicationRecord
 
   paginates_per ITEMS_PER_PAGE
 
-  FUZZY_SEARCHABLE_ATTRIBUTES = ['name']
+  FUZZY_SEARCHABLE_ATTRIBUTES = ['name', 'email']
 end

@@ -1,0 +1,17 @@
+.container
+  .row
+    .col
+      h1 Package #{@package.title}
+
+      table.table
+        tr
+          th Latest Versions
+          - if @latest_version
+            td = @latest_version.version_number
+          - else
+            td -
+        - if @latest_version
+          tr
+            th Description
+          tr
+            td = @package.description
