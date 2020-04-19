@@ -1,4 +1,6 @@
 class PackageVersion < ApplicationRecord
+  extend FuzzySearchable
+
   CREATED_STATUS = 'created'
   COMPLETED_STATUS = 'completed'
 

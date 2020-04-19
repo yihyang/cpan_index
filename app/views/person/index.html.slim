@@ -1,0 +1,19 @@
+.container
+  .row
+    .col
+      h2 Search
+      = render 'home/shared/search_bar', url: '/person/search'
+
+      hr
+
+      = paginate @people
+
+      hr
+
+      h3 People
+      table.table
+        tr
+          th Name
+        - @people.each do |person|
+          tr
+            td = person.name

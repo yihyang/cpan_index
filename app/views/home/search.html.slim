@@ -1,0 +1,18 @@
+.container
+  .row
+    .col
+      h3 People
+      table.table
+        tr
+          th Name
+        - @people.each do |person|
+          tr
+            td = person.name
+
+      h3 Packages
+      table.table
+        tr
+          th Name
+        - @packages.each do |package|
+          tr
+            td = package.title
