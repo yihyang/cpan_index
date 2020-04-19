@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'dotenv'
+gem 'gzipped_tar', '~> 0.1.1'
 gem 'httparty'
 gem 'pg'
 gem 'rspec-rails'

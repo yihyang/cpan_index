@@ -5,6 +5,8 @@ class CreatePackages < ActiveRecord::Migration[6.0]
       t.string :title
       t.bigint :latest_package_version_id, nullable: true
 
+      t.index :title, unique: true
+
       t.timestamps
     end
   end

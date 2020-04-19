@@ -29,12 +29,14 @@ ActiveRecord::Schema.define(version: 2020_04_12_134849) do
     t.bigint "package_id"
     t.string "version_number"
     t.string "description"
+    t.bigint "maintainer_id"
     t.datetime "publication_date"
     t.string "status"
     t.text "index_raw_data"
     t.text "description_raw_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["package_id", "version_number"], name: "index_package_versions_on_package_id_and_version_number", unique: true
     t.index ["package_id"], name: "index_package_versions_on_package_id"
   end
 
@@ -43,11 +45,11 @@ ActiveRecord::Schema.define(version: 2020_04_12_134849) do
     t.bigint "latest_package_version_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["title"], name: "index_packages_on_title", unique: true
   end
 
   create_table "people", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
