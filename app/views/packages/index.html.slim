@@ -1,0 +1,19 @@
+.container
+  .row
+    .col
+      h2 Search
+      = render 'home/shared/search_bar', url: '/packages/search'
+
+      hr
+
+      = paginate @packages
+
+      hr
+
+      h3 Packages (#{@packages_length})
+      table.table
+        tr
+          th Name
+        - @packages.each do |package|
+          tr
+            td = link_to package.title, package

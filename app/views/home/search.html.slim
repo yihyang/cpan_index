@@ -1,0 +1,24 @@
+.container
+  .row
+    .col
+      h3 People
+      table.table
+        tr
+          th Name
+        - @people.each do |person|
+          tr
+            td = link_to person.name, url_for(person)
+        tr
+          td
+            = link_to "Click to see more result", person_search_path(q: params[:q])
+
+      h3 Packages
+      table.table
+        tr
+          th Name
+        - @packages.each do |package|
+          tr
+            td = link_to package.title, url_for(package)
+        tr
+          td
+            = link_to "Click to see more result", packages_search_path(q: params[:q])

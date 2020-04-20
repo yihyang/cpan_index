@@ -1,0 +1,2 @@
+= form_with(url: url, method: 'get') do
+  = text_field_tag :q, params[:q] || '', required: true, class: 'form-control'
