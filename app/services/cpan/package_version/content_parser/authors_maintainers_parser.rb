@@ -27,7 +27,7 @@ module Cpan
               author_match = author.match(/([\w\s\-\.]+)\[([\,\s\w]+)\]/) # "Sébastien Auclair [ctb]"
               item = {
                 name: author_match[1].strip,
-                role: author_match[2].split(', ')
+                roles: author_match[2].split(', ')
               }
 
               # email data exists

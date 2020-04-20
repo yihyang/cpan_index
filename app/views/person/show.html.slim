@@ -1,2 +1,19 @@
-h1 Person#show
-p Find me in app/views/person/show.html.slim
+.container
+  .row
+    .col
+      = link_to "< Person Search Page", packages_search_url
+
+  .row
+    .col
+      h2 Person: #{@person.name}
+
+      table.table
+        tr
+          th Package
+          th Version Number
+          th Role
+        - @person.authors.each do |author|
+          tr
+            td = link_to author.package_version.package.title, author.package_version.package
+            td = author.package_version.version_number
+            td = author.role

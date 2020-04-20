@@ -19,7 +19,10 @@ module Cpan
           description_raw_data: @raw_record,
           description: @parsed_record[:description]
         )
-        # create package
+
+        package.update(
+          latest_package_version_id: package_version.id
+        )
 
         # maintainer
         maintainer_record = @parsed_record[:maintainer]

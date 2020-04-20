@@ -16,4 +16,4 @@
           th Name
         - @people.each do |person|
           tr
-            td = person.name
+            td = link_to person.name, person

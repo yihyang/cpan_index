@@ -16,4 +16,4 @@
           th Name
         - @packages.each do |package|
           tr
-            td = package.title
+            td = link_to package.title, package

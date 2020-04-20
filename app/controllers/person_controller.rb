@@ -1,11 +1,11 @@
 class PersonController < ApplicationController
   def index
-    @people = Person.all.page params[:page]
+    @people = Person.all.order(:name).page params[:page]
   end
 
   def search
-    query = params[:q]
-    @people = Person.fuzzy_search(query).page params[:page]
+    query = params[:q] || ''
+    @people = Person.fuzzy_search(query).order(:name).page params[:page]
   end
 
   def show
