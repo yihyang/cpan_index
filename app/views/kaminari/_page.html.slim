@@ -8,7 +8,7 @@
     remote       : data-remote
 li.page-item class="#{' active' if page.current?}"
   - if page.current?
-    li.page-item.current
+    li.page-item.active
       span.page-link = page
   - else
     == link_to_unless page.current?, page, url, {remote: remote, rel: page.rel, class: 'page-link'}

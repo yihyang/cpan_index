@@ -1,5 +1,6 @@
 class PersonController < ApplicationController
   def index
+    @people_length = Person.all.length
     @people = Person.all.order(:name).page params[:page]
   end
 

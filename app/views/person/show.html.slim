@@ -6,7 +6,20 @@
   .row
     .col
       h2 Person: #{@person.name}
+      p Email: #{@person.email}
 
+      h3 Maintains
+
+      table.table
+        tr
+          th Package
+          th Version Number
+        - @person.maintains.each do |maintain|
+          tr
+            td = link_to maintain.package.title, maintain.package
+            td = maintain.version_number
+
+      h3 Authors
       table.table
         tr
           th Package

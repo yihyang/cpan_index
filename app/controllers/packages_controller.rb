@@ -1,5 +1,6 @@
 class PackagesController < ApplicationController
   def index
+    @packages_length = Package.all.length
     @packages = Package.all.page params[:page]
   end
 

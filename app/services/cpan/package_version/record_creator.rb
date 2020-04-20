@@ -29,10 +29,8 @@ module Cpan
 
         return unless maintainer_record
 
-        maintainer = Person::find_or_create_by(
-          name: maintainer_record[:name],
-          email: maintainer_record[:email]
-        )
+        maintainer = Person::find_or_create_by(name: maintainer_record[:name])
+        maintainer.update(email: maintainer_record[:email])
         package_version.update(
           maintainer_id: maintainer.id
         )
@@ -41,10 +39,8 @@ module Cpan
         authors_record = @parsed_record[:authors]
 
         authors_record.each do |author_record|
-          author = Person::find_or_create_by(
-            name: author_record[:name],
-            email: author_record[:email]
-          )
+          author = Person::find_or_create_by(name: author_record[:name])
+          author.update(email: author_record[:email])
 
           # sometimes the roles of the author are not specified
           if author_record[:roles]

@@ -7,4 +7,5 @@ class Person < ApplicationRecord
 
   has_many :authors
   has_many :package_versions, through: :authors
+  has_many :maintains, class_name: 'PackageVersion', foreign_key: :maintainer_id
 end
