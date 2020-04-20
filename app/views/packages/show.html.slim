@@ -26,7 +26,7 @@
               th Authors
               td
                 - @latest_version.authors.each do |author|
-                  = link_to author.person.name, author.person
+                  = link_to author.person.name,author.person
                   | &nbsp;
                   - if author.person.email
                     = author.person.email

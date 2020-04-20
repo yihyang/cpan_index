@@ -10,6 +10,6 @@ class PersonController < ApplicationController
   end
 
   def show
-    @person = Person.find(params[:id])
+    @person = Person.includes([:maintains, :package_versions, authors: [package_version: [:package]]]).find(params[:id])
   end
 end
