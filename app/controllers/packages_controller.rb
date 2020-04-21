@@ -6,7 +6,9 @@ class PackagesController < ApplicationController
 
   def search
     query = params[:q] || ''
-    @packages = Package.fuzzy_search(query).page params[:page]
+    @packages = Package.fuzzy_search(query)
+    @packages_length = @packages.length
+    @packages = @packages.order(:title).page params[:page]
   end
 
   def show
