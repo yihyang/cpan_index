@@ -6,7 +6,9 @@ class PersonController < ApplicationController
 
   def search
     query = params[:q] || ''
-    @people = Person.fuzzy_search(query).order(:name).page params[:page]
+    @people = Person.fuzzy_search(query)
+    @people_length = @people.length
+    @people = @people.order(:name).page params[:page]
   end
 
   def show
